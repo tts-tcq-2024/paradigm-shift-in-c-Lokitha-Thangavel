@@ -1,21 +1,13 @@
 #include <stdio.h>
 #include <assert.h>
 
-int checkTemp(float temp) {
-    return (temp >= 0 && temp <= 45);
-}
 
-int checkSoc(float soc) {
-    return (soc >= 20 && soc <= 80);
+int isInRange(float value, float min, float max) {
+    return (value >= min && value <= max);
 }
-
-int checkChargeRate(float cr) {
-    return (cr <= 0.8);
-}
-
 
 int batteryIsOk(float temperature, float soc, float chargeRate) {
-    return checkTemp(temperature) && checkSoc(soc) && checkChargeRate(chargeRate);
+    return isInRange(temperature, 0, 45) && isInRange(soc, 20, 80) && (chargeRate <= 0.8);
 }
 
 
