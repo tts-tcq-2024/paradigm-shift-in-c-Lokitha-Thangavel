@@ -3,7 +3,7 @@
 
 int checkTemp(float temp)
 {
-  if(temperature < 0 || temperature > 45) 
+  if(temp < 0 || temp > 45) 
   {
     printf("Temperature out of range!\n");
     return 0;
